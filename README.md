@@ -1,5 +1,8 @@
 # Terraform Benchmark Infrastructure
 
+This repository is to track the Terraform configuration used to spin up VMs
+for benchmarking storage systems.
+
 ## Template VM Setup
 
 Ideally, all of these steps will be performed on the Proxmox cluster. However,
@@ -66,7 +69,7 @@ for later steps.
   1. `main.tf` - defines resource configuration (e.g., VM setup)
   1. `providers.tf` - defines provider(s)
   1. `variables.tf` - defines variables used throughout the Terraform configuration
-  1. `terraform.tfvars` - should be modified to specify values for variables; secrets should NOT be committed
+  1. `terraform.tfvars` - copy/rename terraform.tfvars.example and modify to specify values for variables
 1. Run `terraform init` to make sure provider plugins are installed.
 1. Run `terraform plan` to see if your configuration is valid/things are ready to go.
 1. Run `terraform apply` to execute the plan.
