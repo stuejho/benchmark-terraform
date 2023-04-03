@@ -3,5 +3,6 @@ proxmox_api_url = "https://example.com:8006/api2/json"
 proxmox_api_token_id = "terraform-prov@pve!token"
 proxmox_api_token_secret = "api-token-with-privilege-separation-no"
 
-vm_template_name= "ubuntu-2004-cloudinit-template"
+vm_template_name = "ubuntu-2004-cloudinit-template"
 
+ssh_key = ""
