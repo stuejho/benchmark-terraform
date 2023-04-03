@@ -21,13 +21,19 @@ resource "proxmox_vm_qemu" "virtual_machines" {
     bridge = "vmbr0"
     model  = "virtio"
   }
-  
+  ipconfig0 = "ip=10.1.1.${count.index + 101}/24,gw=10.1.1.1"
+
   disk {
     storage = "local-lvm"
-    type = "virtio"
-    size = "10G"
+    type = "scsi"
+    size = "2252M"
   }
   
   # VM Cloud-Init Settings
   os_type = "cloud-init"
+  
+  # Set ssh key
+  sshkeys = <<EOF
+  ${var.ssh_key}
+  EOF
 }
