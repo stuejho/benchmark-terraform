@@ -26,14 +26,12 @@ resource "proxmox_vm_qemu" "virtual_machines" {
   disk {
     storage = "local-lvm"
     type = "scsi"
-    size = "2252M"
+    size = "10G"
   }
   
   # VM Cloud-Init Settings
   os_type = "cloud-init"
   
   # Set ssh key
-  sshkeys = <<EOF
-  ${var.ssh_key}
-  EOF
+  sshkeys = var.ssh_key
 }
