@@ -25,3 +25,8 @@ variable "ci_user" {
 variable "ci_password" {
   type = string
 }
+
+variable "physical_disks" {
+  description = "Map of physical disks to device IDs"
+  type        = map(string)
+}
