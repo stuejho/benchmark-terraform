@@ -30,8 +30,7 @@ resource "proxmox_vm_qemu" "virtual_machines" {
   }
   
   # VM Cloud-Init Settings
-  os_type = "cloud-init"
-  
-  # Set ssh key
-  sshkeys = var.ssh_key
+  os_type    = "cloud-init"
+  ciuser     = var.ci_user
+  cipassword = var.ci_password
 }

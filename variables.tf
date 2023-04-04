@@ -18,6 +18,10 @@ variable "vm_template_name" {
   type = string
 }
 
-variable "ssh_key" {
+variable "ci_user" {
+  type = string
+}
+
+variable "ci_password" {
   type = string
 }
